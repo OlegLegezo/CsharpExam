@@ -48,4 +48,25 @@ string[] ArrayLimitElementLength(string[] inputArray)//метод поиска �
     return outputArray;
 }
 
+string PrintArray(string[] array)//метод печати массива
+{
+    string txt = string.Empty;
+    int len = array.Length;
+    for (int i = 0; i < len; i++)
+    {
+        if (i == len - 1)
+        {
+            txt += $"{array[i]}";//убрал запятую после последнего символа
+        }
+        else
+        {
+            txt += $"{array[i]},";
+        }
+    }
+    return $"[{txt}]";
+}
 
+
+string[] NewArray = inputArray();
+string[] AnswerArray = ArrayLimitElementLength(NewArray);
+Console.WriteLine($"Массив-ответ: {PrintArray(AnswerArray)}");
